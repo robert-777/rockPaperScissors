@@ -13,7 +13,7 @@ function getHumanChoice() {
   const choices = ["rock", "paper", "scissors"];
   let humanChoice = prompt(
     "What is our choice? (options: rock, paper, scissors)"
-  );
+  ).toLowerCase();
   while (!choices.includes(humanChoice)) {
     humanChoice = prompt(
       "Invalid choice. Please choose between rock, paper, scissors"
