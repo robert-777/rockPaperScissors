@@ -1,3 +1,7 @@
+// Score variables
+let humanScore = 0;
+let computerSCore = 0;
+
 // randomly returns “rock”, “paper” or “scissors”
 function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
