@@ -75,7 +75,41 @@ function playRound(humanChoice, computerChoice) {
   return;
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function displayCurrentScores(){
+  console.log("Current Scores:");
+  console.log("Player Score: " + humanScore);
+  console.log("Computer Score: " + computerScore);
+}
 
-playRound(humanSelection, computerSelection);
+function playGame() {
+  let roundCount = 0;
+
+  console.log("##### TicTacToe ####");
+  displayCurrentScores();
+  console.log("# Rules: #");
+  console.log("# The Game is a best out of 5");
+  console.log("# The firstplayer to win 3 matches");
+  console.log("# also wins the entire game.");
+  console.log("# Good luck and have fun!");
+  
+  while (humanScore < 3 && computerScore < 3){
+    roundCount++;
+    console.log("---------------");
+    console.log("## Round "+ roundCount);
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+    displayCurrentScores();
+  }
+
+  if(humanScore >= 3){
+    console.log("Congratulations! You won against the computer.")
+    console.log("Final Score: " + humanScore + " : " + computerScore);
+  }
+  else{
+    console.log("You lost to the computer. Better luck next time.")
+    console.log("Final Score: " + computerScore + " : " + humanScore);
+  }
+}
+
+playGame();
