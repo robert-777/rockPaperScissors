@@ -1,1 +1,2 @@
 # rockPaperScissors
+check the console
